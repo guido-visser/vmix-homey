@@ -33,6 +33,13 @@ const vMixTriggers = _.debounce(async (homey: Homey, command: string) => {
                 "overlay-input": parseInt(param1),
             });
             break;
+
+        case "InputPlaying":
+            homey.flow.getTriggerCard("input-playing").trigger({
+                "input-number": parseInt(param1),
+                playing: parseInt(param2),
+            });
+            break;
     }
 }, 150);
 

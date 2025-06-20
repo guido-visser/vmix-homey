@@ -27,6 +27,34 @@
     "triggers": [
       {
         "title": {
+          "en": "Input Playing"
+        },
+        "tokens": [
+          {
+            "type": "number",
+            "name": "input-number",
+            "title": {
+              "en": "Input Number"
+            },
+            "example": {
+              "en": "1"
+            }
+          },
+          {
+            "type": "number",
+            "name": "playing",
+            "title": {
+              "en": "Playing"
+            },
+            "example": {
+              "en": "0"
+            }
+          }
+        ],
+        "id": "input-playing"
+      },
+      {
+        "title": {
           "en": "Input Preview Changed"
         },
         "tokens": [
