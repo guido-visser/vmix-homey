@@ -16,10 +16,21 @@ const vMixTriggers = _.debounce(async (homey: Homey, command: string) => {
             break;
 
         case "InputPreview":
-            homey.log("Hello");
             homey.flow.getTriggerCard("input-preview-changed").trigger({
                 "preview-input": parseInt(param1),
                 "live-input": parseInt(param2),
+            });
+            break;
+
+        case "Overlay1":
+        case "Overlay2":
+        case "Overlay3":
+        case "Overlay4":
+            const overlayNumber = activator.split("Overlay")[1];
+            homey.flow.getTriggerCard("overlay-changed").trigger({
+                "overlay-number": parseInt(overlayNumber),
+                "overlay-active": parseInt(param2),
+                "overlay-input": parseInt(param1),
             });
             break;
     }

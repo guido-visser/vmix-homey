@@ -1,0 +1,37 @@
+{
+  "title": {
+    "en": "Overlay Changed"
+  },
+  "tokens": [
+    {
+      "type": "number",
+      "name": "overlay-input",
+      "title": {
+        "en": "Overlay Input"
+      },
+      "example": {
+        "en": "3"
+      }
+    },
+    {
+      "type": "number",
+      "name": "overlay-active",
+      "title": {
+        "en": "Overlay Active"
+      },
+      "example": {
+        "en": "0 / 1"
+      }
+    },
+    {
+      "type": "number",
+      "name": "overlay-number",
+      "title": {
+        "en": "Overlay Number"
+      },
+      "example": {
+        "en": "1"
+      }
+    }
+  ]
+}

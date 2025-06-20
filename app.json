@@ -39,19 +39,47 @@
             "example": {
               "en": "Preview input number"
             }
-          },
-          {
-            "type": "number",
-            "name": "live-input",
-            "title": {
-              "en": "Live Input"
-            },
-            "example": {
-              "en": "Live input number"
-            }
           }
         ],
         "id": "input-preview-changed"
+      },
+      {
+        "title": {
+          "en": "Overlay Changed"
+        },
+        "tokens": [
+          {
+            "type": "number",
+            "name": "overlay-input",
+            "title": {
+              "en": "Overlay Input"
+            },
+            "example": {
+              "en": "3"
+            }
+          },
+          {
+            "type": "number",
+            "name": "overlay-active",
+            "title": {
+              "en": "Overlay Active"
+            },
+            "example": {
+              "en": "0 / 1"
+            }
+          },
+          {
+            "type": "number",
+            "name": "overlay-number",
+            "title": {
+              "en": "Overlay Number"
+            },
+            "example": {
+              "en": "1"
+            }
+          }
+        ],
+        "id": "overlay-changed"
       },
       {
         "title": {
