@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "title": "vMix Instance",
+    "subtitle": "Add your vMix instance to Homey",
+    "vmix_ip_address": "vMix IP Address",
+    "save": "Save"
+  },
+  "pair": {
+    "title": "Add vMix instance"
+  },
+  "continue": "Continue"
+}

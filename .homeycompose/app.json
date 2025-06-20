@@ -1,0 +1,21 @@
+{
+  "id": "com.guidovisser.vmix-homey",
+  "version": "1.0.0",
+  "author": "Guido Visser",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": ["local"],
+  "name": {
+    "en": "vMix"
+  },
+  "description": {
+    "en": "vMix integration for Homey"
+  },
+  "category": ["tools"],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  }
+}

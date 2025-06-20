@@ -1,0 +1,73 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.guidovisser.vmix-homey",
+  "version": "1.0.0",
+  "author": "Guido Visser",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "vMix"
+  },
+  "description": {
+    "en": "vMix integration for Homey"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Started Streaming"
+        },
+        "id": "started-streaming"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "vMix Instance"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/vmix-instance/assets/images/small.png",
+        "large": "/drivers/vmix-instance/assets/images/large.png",
+        "xlarge": "/drivers/vmix-instance/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "vmix_pair"
+        }
+      ],
+      "settings": [
+        {
+          "id": "ip",
+          "hint": "IP address of vMix",
+          "type": "text",
+          "value": "0.0.0.0",
+          "label": {
+            "en": "IP address"
+          }
+        }
+      ],
+      "id": "vmix-instance"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+<script type="text/javascript">
+    Homey.setTitle(Homey.__("pair.title"));
+    const configure = async () => {
+        const name = $("#name").val();
+        const ip = $("#ipAddress").val();
+
+        let found = false;
+
+        try {
+            $(".spacer").text("");
+            $(".btnContinue").addClass("is-loading");
+            const res = await fetch(`http://${ip}:8088`);
+            const xml = await res.text();
+            if (xml.indexOf("vMix") !== -1) {
+                found = true;
+            }
+        } catch (e) {
+            $(".spacer").text(e.toString());
+        }
+
+        $(".btnContinue").removeClass("is-loading");
+
+        if (!found) {
+            $(".spacer").text(`Couldn't find vMix instance with ip ${ip}`);
+            return;
+        }
+
+        const device = {
+            data: { id: `vMix_${new Date().getTime()}` },
+            name: "vMix",
+            settings: {
+                ip,
+            },
+        };
+
+        Homey.createDevice(device)
+            .then((result) => Homey.done())
+            .catch((error) => Homey.alert(error));
+    };
+</script>
+
+<style>
+    .homey-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+</style>
+
+<div class="homey-wrapper">
+    <form class="homey-form">
+        <fieldset class="homey-form-fieldset">
+            <legend class="homey-form-legend"></legend>
+            <div class="homey-form-group">
+                <label class="homey-form-label" for="name">Instance name</label>
+                <input
+                    class="homey-form-input"
+                    id="name"
+                    placeholder="vMix PC"
+                    type="text"
+                    value=""
+                />
+            </div>
+            <div class="homey-form-group">
+                <label class="homey-form-label" for="ipAddress"
+                    >IP Address</label
+                >
+                <input
+                    class="homey-form-input"
+                    id="ipAddress"
+                    placeholder="192.168.1.128"
+                    type="text"
+                    value=""
+                />
+            </div>
+        </fieldset>
+    </form>
+    <div class="spacer"></div>
+    <button
+        class="homey-button-primary-full btnContinue"
+        onclick="configure();"
+        data-i18n="continue"
+    ></button>
+</div>
