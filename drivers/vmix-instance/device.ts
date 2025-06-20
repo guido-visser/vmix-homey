@@ -1,6 +1,7 @@
 import Homey, { FlowCard, FlowCardTrigger } from "homey";
 import _, { Dictionary } from "lodash";
 import net from "net";
+import vMixTriggers from "./triggers";
 
 module.exports = class VMixInstance extends Homey.Device {
     private _ip: string = "";
@@ -51,31 +52,11 @@ module.exports = class VMixInstance extends Homey.Device {
 
             res.forEach((command) => {
                 if (command.startsWith("ACTS OK ")) {
-                    this.commandHandler(command.split("ACTS OK ")[1]);
+                    vMixTriggers(this.homey, command.split("ACTS OK ")[1]);
                 }
             });
         });
     }
-
-    commandHandler = _.debounce(async (command: string) => {
-        const [activator, param1, param2] = command.split(" ");
-        switch (activator) {
-            case "Streaming":
-                if (param1 === "0") {
-                    this.log("STOPPED");
-                    this.homey.flow
-                        .getTriggerCard("stopped-streaming")
-                        .trigger();
-                }
-                if (param1 === "1") {
-                    this.log("STARTED");
-                    this.homey.flow
-                        .getTriggerCard("started-streaming")
-                        .trigger();
-                }
-                break;
-        }
-    }, 150);
 
     /**
      * onSettings is called when the user updates the device's settings.

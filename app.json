@@ -27,6 +27,34 @@
     "triggers": [
       {
         "title": {
+          "en": "Input Preview Changed"
+        },
+        "tokens": [
+          {
+            "type": "number",
+            "name": "preview-input",
+            "title": {
+              "en": "Preview Input"
+            },
+            "example": {
+              "en": "Preview input number"
+            }
+          },
+          {
+            "type": "number",
+            "name": "live-input",
+            "title": {
+              "en": "Live Input"
+            },
+            "example": {
+              "en": "Live input number"
+            }
+          }
+        ],
+        "id": "input-preview-changed"
+      },
+      {
+        "title": {
           "en": "Started Streaming"
         },
         "id": "started-streaming"

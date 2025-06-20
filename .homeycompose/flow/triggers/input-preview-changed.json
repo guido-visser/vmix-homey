@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Input Preview Changed"
+  },
+  "tokens": [
+    {
+      "type": "number",
+      "name": "preview-input",
+      "title": {
+        "en": "Preview Input"
+      },
+      "example": {
+        "en": "Preview input number"
+      }
+    }
+  ]
+}
