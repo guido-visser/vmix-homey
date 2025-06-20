@@ -14,8 +14,7 @@ module.exports = class VMixInstance extends Homey.Device {
      */
     async onInit() {
         this.log(this.getName(), "has been initialized");
-        const ip = this.getSetting("ip");
-        this._ip = ip;
+        this._ip = this.getSetting("ip");
 
         try {
             this.connectToVmix();
@@ -24,15 +23,14 @@ module.exports = class VMixInstance extends Homey.Device {
 
     async connectToVmix() {
         let reconnection;
-        const ip = this.getSetting("ip");
         this._client = new net.Socket();
 
         this._client.on("error", (e) => this.log("ERROR", e));
 
         try {
-            this.log("connecting...");
-            this._client.connect(8099, ip, () => {
-                this.log("connected");
+            this.log("Connecting...");
+            this._client.connect(8099, this._ip, () => {
+                this.log("Connected");
                 this.setAvailable().catch(this.error);
                 this._client.write("SUBSCRIBE ACTS\r\n");
             });
@@ -82,7 +80,10 @@ module.exports = class VMixInstance extends Homey.Device {
         changedKeys: string[];
     }): Promise<string | void> {
         if (newSettings.ip && typeof newSettings.ip === "string") {
+            this.log("IP Address changed to", newSettings.ip);
+            this._client.destroy();
             this._ip = newSettings.ip;
+            this.connectToVmix();
         }
     }
 
