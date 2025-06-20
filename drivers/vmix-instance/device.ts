@@ -1,4 +1,5 @@
-import Homey from "homey";
+import Homey, { FlowCard, FlowCardTrigger } from "homey";
+import _, { Dictionary } from "lodash";
 import net from "net";
 
 module.exports = class VMixInstance extends Homey.Device {
@@ -6,7 +7,6 @@ module.exports = class VMixInstance extends Homey.Device {
 
     //@ts-ignore
     private _client: net.Socket;
-    private _triggers: any;
 
     /**
      * onInit is called when the device is initialized.
@@ -21,13 +21,6 @@ module.exports = class VMixInstance extends Homey.Device {
         } catch (e) {}
     }
 
-    initTriggers() {
-        this._triggers = {
-            started_streaming:
-                this.homey.flow.getTriggerCard("started-streaming"),
-        };
-    }
-
     async connectToVmix() {
         let reconnection;
         const ip = this.getSetting("ip");
@@ -38,6 +31,7 @@ module.exports = class VMixInstance extends Homey.Device {
         try {
             this.log("connecting...");
             this._client.connect(8099, ip, () => {
+                this.log("connected");
                 this._client.write("SUBSCRIBE ACTS\r\n");
             });
 
@@ -57,20 +51,31 @@ module.exports = class VMixInstance extends Homey.Device {
 
             res.forEach((command) => {
                 if (command.startsWith("ACTS OK ")) {
-                    this.commandHandler(command.split("ACTS OK")[1]);
+                    this.commandHandler(command.split("ACTS OK ")[1]);
                 }
             });
         });
     }
 
-    async commandHandler(command: string) {
-        const [activator, number1, number2] = command.split(" ");
+    commandHandler = _.debounce(async (command: string) => {
+        const [activator, param1, param2] = command.split(" ");
         switch (activator) {
             case "Streaming":
-                this.homey.flow.getTriggerCard;
+                if (param1 === "0") {
+                    this.log("STOPPED");
+                    this.homey.flow
+                        .getTriggerCard("stopped-streaming")
+                        .trigger();
+                }
+                if (param1 === "1") {
+                    this.log("STARTED");
+                    this.homey.flow
+                        .getTriggerCard("started-streaming")
+                        .trigger();
+                }
                 break;
         }
-    }
+    }, 150);
 
     /**
      * onSettings is called when the user updates the device's settings.

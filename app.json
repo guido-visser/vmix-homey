@@ -30,6 +30,12 @@
           "en": "Started Streaming"
         },
         "id": "started-streaming"
+      },
+      {
+        "title": {
+          "en": "Stopped Streaming"
+        },
+        "id": "stopped-streaming"
       }
     ]
   },
