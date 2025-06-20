@@ -33,6 +33,7 @@ module.exports = class VMixInstance extends Homey.Device {
             this.log("connecting...");
             this._client.connect(8099, ip, () => {
                 this.log("connected");
+                this.setAvailable().catch(this.error);
                 this._client.write("SUBSCRIBE ACTS\r\n");
             });
 
@@ -41,6 +42,7 @@ module.exports = class VMixInstance extends Homey.Device {
 
         this._client.on("close", async () => {
             this.log("CLOSE CONNECTION");
+            this.setUnavailable().catch(this.error);
             reconnection = setTimeout(() => this.connectToVmix(), 10000);
         });
 
