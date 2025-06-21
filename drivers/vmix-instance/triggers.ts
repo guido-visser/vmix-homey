@@ -2,49 +2,56 @@ import { Homey } from "homey/lib/Device";
 import _ from "lodash";
 import { vMixAPI } from "../../utils";
 
-const vMixTriggers = _.debounce(
-    async (homey: Homey, ip: string, command: string) => {
-        const [activator, param1, param2] = command.split(" ");
+const vMixTriggers = async (homey: Homey, ip: string, command: string) => {
+    const [activator, param1, param2] = command.split(" ");
 
-        homey.log(activator, param1, param2);
-        switch (activator) {
-            case "Streaming":
-                await recordingOrStreaming("Streaming", homey, ip, param1);
-                break;
+    //homey.log(activator, param1, param2);
+    switch (activator) {
+        case "Streaming":
+            await recordingOrStreaming("Streaming", homey, ip, param1);
+            break;
 
-            case "Recording":
-                await recordingOrStreaming("Recording", homey, ip, param1);
-                break;
+        case "Recording":
+            await recordingOrStreaming("Recording", homey, ip, param1);
+            break;
 
-            case "InputPreview":
-                homey.flow.getTriggerCard("input-preview-changed").trigger({
-                    "preview-input": parseInt(param1),
-                    "live-input": parseInt(param2),
-                });
-                break;
+        case "Input":
+            if (param2 === "0") return;
+            homey.flow.getTriggerCard("input-changed").trigger({
+                "input-number": parseInt(param1),
+            });
+            break;
 
-            case "Overlay1":
-            case "Overlay2":
-            case "Overlay3":
-            case "Overlay4":
-                const overlayNumber = activator.split("Overlay")[1];
-                homey.flow.getTriggerCard("overlay-changed").trigger({
-                    "overlay-number": parseInt(overlayNumber),
-                    "overlay-active": !!parseInt(param2),
-                    "overlay-input": parseInt(param1),
-                });
-                break;
+        case "InputPreview":
+            if (param2 === "0") return;
+            homey.flow.getTriggerCard("input-preview-changed").trigger({
+                "preview-input": parseInt(param1),
+            });
+            break;
 
-            case "InputPlaying":
-                homey.flow.getTriggerCard("input-playing").trigger({
-                    "input-number": parseInt(param1),
-                    playing: parseInt(param2),
-                });
-                break;
-        }
-    },
-    150
-);
+        case "Overlay1":
+        case "Overlay2":
+        case "Overlay3":
+        case "Overlay4":
+            const overlayNumber = activator.split("Overlay")[1];
+            homey.flow.getTriggerCard("overlay-changed").trigger({
+                "overlay-number": parseInt(overlayNumber),
+                "overlay-active": !!parseInt(param2),
+                "overlay-input": parseInt(param1),
+            });
+            break;
+
+        case "InputPlaying":
+            homey.flow.getTriggerCard("input-playing").trigger({
+                "input-number": parseInt(param1),
+                playing: parseInt(param2),
+            });
+            break;
+    }
+};
+
+let latestStreaming = 0;
+let streamingDebounce = 2000;
 
 const recordingOrStreaming = async (
     action: "Recording" | "Streaming",
@@ -60,6 +67,11 @@ const recordingOrStreaming = async (
     let option5: boolean | string = false;
 
     if (action === "Streaming") {
+        //Added a little debounce. vMix returns ACTS OK Streaming [nr] at random. There's no clear indication of what channel the stream is referring to.
+        //It's also not clear what state the stream is in other than on or off. The 'Yellow' state also triggers here, but there's no way to check for that.
+        if (new Date().getTime() - latestStreaming < streamingDebounce) return;
+
+        latestStreaming = new Date().getTime();
         const { streaming } = await vMixAPI(ip);
         if (streaming !== "False") {
             option1 = !!streaming.channel1;

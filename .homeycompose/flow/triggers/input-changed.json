@@ -1,0 +1,17 @@
+{
+    "title": {
+        "en": "Input Changed",
+        "nl": "Input is Veranderd"
+    },
+    "tokens": [
+        {
+            "type": "number",
+            "name": "input-number",
+            "title": {
+                "en": "Input Number",
+                "nl": "Input Nummer"
+            },
+            "example": "2"
+        }
+    ]
+}
