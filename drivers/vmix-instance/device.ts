@@ -2,6 +2,7 @@ import Homey, { FlowCard, FlowCardTrigger } from "homey";
 import _, { Dictionary } from "lodash";
 import net from "net";
 import vMixTriggers from "./triggers";
+import vMixConditions from "./conditions";
 
 module.exports = class VMixInstance extends Homey.Device {
     private _ip: string = "";
@@ -15,6 +16,12 @@ module.exports = class VMixInstance extends Homey.Device {
     async onInit() {
         this.log(this.getName(), "has been initialized");
         this._ip = this.getSetting("ip");
+
+        this.homey.flow
+            .getConditionCard("is-streaming")
+            .registerRunListener(
+                async () => await vMixConditions(this, this._ip, "is-streaming")
+            );
 
         try {
             this.connectToVmix();
