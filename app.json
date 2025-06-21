@@ -113,12 +113,116 @@
         "title": {
           "en": "Started Streaming"
         },
+        "tokens": [
+          {
+            "type": "boolean",
+            "name": "channel1",
+            "title": {
+              "en": "Channel 1"
+            },
+            "example": {
+              "en": "True"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel2",
+            "title": {
+              "en": "Channel 2"
+            },
+            "example": {
+              "en": "False"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel3",
+            "title": {
+              "en": "Channel 3"
+            },
+            "example": {
+              "en": "False"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel4",
+            "title": {
+              "en": "Channel 4"
+            },
+            "example": {
+              "en": "False"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel5",
+            "title": {
+              "en": "Channel 5"
+            },
+            "example": {
+              "en": "False"
+            }
+          }
+        ],
         "id": "started-streaming"
       },
       {
         "title": {
           "en": "Stopped Streaming"
         },
+        "tokens": [
+          {
+            "type": "boolean",
+            "name": "channel1",
+            "title": {
+              "en": "Channel 1"
+            },
+            "example": {
+              "en": "True"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel2",
+            "title": {
+              "en": "Channel 2"
+            },
+            "example": {
+              "en": "False"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel3",
+            "title": {
+              "en": "Channel 3"
+            },
+            "example": {
+              "en": "False"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel4",
+            "title": {
+              "en": "Channel 4"
+            },
+            "example": {
+              "en": "False"
+            }
+          },
+          {
+            "type": "boolean",
+            "name": "channel5",
+            "title": {
+              "en": "Channel 5"
+            },
+            "example": {
+              "en": "False"
+            }
+          }
+        ],
         "id": "stopped-streaming"
       }
     ]

@@ -52,7 +52,11 @@ module.exports = class VMixInstance extends Homey.Device {
 
             res.forEach((command) => {
                 if (command.startsWith("ACTS OK ")) {
-                    vMixTriggers(this.homey, command.split("ACTS OK ")[1]);
+                    vMixTriggers(
+                        this.homey,
+                        this._ip,
+                        command.split("ACTS OK ")[1]
+                    );
                 }
             });
         });

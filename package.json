@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.17.18",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "xml2json-light": "^1.0.6"
   }
 }
