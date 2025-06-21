@@ -4,6 +4,7 @@
   "author": "Guido Visser",
   "compatibility": ">=5.0.0",
   "sdk": 3,
+  "brandColor": "#2c79bd",
   "platforms": ["local"],
   "name": {
     "en": "vMix"
