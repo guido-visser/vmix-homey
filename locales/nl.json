@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "title": "vMix Instantie",
+    "subtitle": "Voeg je vMix instantie toe aan Homey",
+    "vmix_ip_address": "vMix IP Addres",
+    "save": "Opslaan"
+  },
+  "pair": {
+    "title": "Voeg vMix instantie toe"
+  },
+  "continue": "Doorgaan"
+}

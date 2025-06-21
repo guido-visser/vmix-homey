@@ -1,37 +1,38 @@
 {
-  "title": {
-    "en": "Overlay Changed"
-  },
-  "tokens": [
-    {
-      "type": "number",
-      "name": "overlay-input",
-      "title": {
-        "en": "Overlay Input"
-      },
-      "example": {
-        "en": "3"
-      }
+    "title": {
+        "en": "Overlay Changed",
+        "nl": "Overlay is veranderd"
     },
-    {
-      "type": "number",
-      "name": "overlay-active",
-      "title": {
-        "en": "Overlay Active"
-      },
-      "example": {
-        "en": "0 / 1"
-      }
-    },
-    {
-      "type": "number",
-      "name": "overlay-number",
-      "title": {
-        "en": "Overlay Number"
-      },
-      "example": {
-        "en": "1"
-      }
-    }
-  ]
+    "tokens": [
+        {
+            "type": "number",
+            "name": "overlay-input",
+            "title": {
+                "en": "Overlay Input Number",
+                "nl": "Overlay Input Nummer"
+            },
+            "example": "3"
+        },
+        {
+            "type": "boolean",
+            "name": "overlay-active",
+            "title": {
+                "en": "Overlay Active",
+                "nl": "Overlay Geactiveerd"
+            },
+            "example": {
+                "en": "True / False",
+                "nl": "Waar / Onwaar"
+            }
+        },
+        {
+            "type": "number",
+            "name": "overlay-number",
+            "title": {
+                "en": "Overlay Number",
+                "nl": "Overlay Nummer"
+            },
+            "example": "1"
+        }
+    ]
 }

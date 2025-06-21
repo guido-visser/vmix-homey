@@ -10,10 +10,12 @@
     "local"
   ],
   "name": {
-    "en": "vMix"
+    "en": "vMix",
+    "nl": "vMix"
   },
   "description": {
-    "en": "vMix integration for Homey"
+    "en": "vMix integration for Homey",
+    "nl": "vMix integratie met Homey"
   },
   "category": [
     "tools"
@@ -24,145 +26,160 @@
     "large": "/assets/images/large.png",
     "xlarge": "/assets/images/xlarge.png"
   },
+  "source": "https://github.com/guido-visser/vmix-homey",
+  "bugs": {
+    "url": "https://github.com/guido-visser/vmix-homey/issues"
+  },
   "flow": {
     "triggers": [
       {
         "title": {
-          "en": "Input Playing"
+          "en": "Input Playing",
+          "nl": "Input speelt af"
         },
         "tokens": [
           {
             "type": "number",
             "name": "input-number",
             "title": {
-              "en": "Input Number"
+              "en": "Input Number",
+              "nl": "Input nummer"
             },
-            "example": {
-              "en": "1"
-            }
+            "example": "1"
           },
           {
             "type": "number",
             "name": "playing",
             "title": {
-              "en": "Playing"
+              "en": "Playing",
+              "nl": "Speelt af"
             },
-            "example": {
-              "en": "0"
-            }
+            "example": "0"
           }
         ],
         "id": "input-playing"
       },
       {
         "title": {
-          "en": "Input Preview Changed"
+          "en": "Input Preview Changed",
+          "nl": "Input Preview is veranderd"
         },
         "tokens": [
           {
             "type": "number",
             "name": "preview-input",
             "title": {
-              "en": "Preview Input"
+              "en": "Preview Input Number",
+              "nl": "Preview Input Nummer"
             },
-            "example": {
-              "en": "3"
-            }
+            "example": "3"
           }
         ],
         "id": "input-preview-changed"
       },
       {
         "title": {
-          "en": "Overlay Changed"
+          "en": "Overlay Changed",
+          "nl": "Overlay is veranderd"
         },
         "tokens": [
           {
             "type": "number",
             "name": "overlay-input",
             "title": {
-              "en": "Overlay Input"
+              "en": "Overlay Input Number",
+              "nl": "Overlay Input Nummer"
             },
-            "example": {
-              "en": "3"
-            }
+            "example": "3"
           },
           {
-            "type": "number",
+            "type": "boolean",
             "name": "overlay-active",
             "title": {
-              "en": "Overlay Active"
+              "en": "Overlay Active",
+              "nl": "Overlay Geactiveerd"
             },
             "example": {
-              "en": "0 / 1"
+              "en": "True / False",
+              "nl": "Waar / Onwaar"
             }
           },
           {
             "type": "number",
             "name": "overlay-number",
             "title": {
-              "en": "Overlay Number"
+              "en": "Overlay Number",
+              "nl": "Overlay Nummer"
             },
-            "example": {
-              "en": "1"
-            }
+            "example": "1"
           }
         ],
         "id": "overlay-changed"
       },
       {
         "title": {
-          "en": "Started Streaming"
+          "en": "Started Streaming",
+          "nl": "Streamen is Gestart"
         },
         "tokens": [
           {
             "type": "boolean",
             "name": "channel1",
             "title": {
-              "en": "Channel 1"
+              "en": "Channel 1",
+              "nl": "Kanaal 1"
             },
             "example": {
-              "en": "True"
+              "en": "True",
+              "nl": "Waar"
             }
           },
           {
             "type": "boolean",
             "name": "channel2",
             "title": {
-              "en": "Channel 2"
+              "en": "Channel 2",
+              "nl": "Kanaal 2"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           },
           {
             "type": "boolean",
             "name": "channel3",
             "title": {
-              "en": "Channel 3"
+              "en": "Channel 3",
+              "nl": "Kanaal 2"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           },
           {
             "type": "boolean",
             "name": "channel4",
             "title": {
-              "en": "Channel 4"
+              "en": "Channel 4",
+              "nl": "Kanaal 4"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           },
           {
             "type": "boolean",
             "name": "channel5",
             "title": {
-              "en": "Channel 5"
+              "en": "Channel 5",
+              "nl": "Kanaal 5"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           }
         ],
@@ -170,68 +187,88 @@
       },
       {
         "title": {
-          "en": "Stopped Streaming"
+          "en": "Stopped Streaming",
+          "nl": "Streamen is Gestopt"
         },
         "tokens": [
           {
             "type": "boolean",
             "name": "channel1",
             "title": {
-              "en": "Channel 1"
+              "en": "Channel 1",
+              "nl": "Kanaal 1"
             },
             "example": {
-              "en": "True"
+              "en": "True",
+              "nl": "Waar"
             }
           },
           {
             "type": "boolean",
             "name": "channel2",
             "title": {
-              "en": "Channel 2"
+              "en": "Channel 2",
+              "nl": "Kanaal 2"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           },
           {
             "type": "boolean",
             "name": "channel3",
             "title": {
-              "en": "Channel 3"
+              "en": "Channel 3",
+              "nl": "Kanaal 3"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           },
           {
             "type": "boolean",
             "name": "channel4",
             "title": {
-              "en": "Channel 4"
+              "en": "Channel 4",
+              "nl": "Kanaal 4"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           },
           {
             "type": "boolean",
             "name": "channel5",
             "title": {
-              "en": "Channel 5"
+              "en": "Channel 5",
+              "nl": "Kanaal 5"
             },
             "example": {
-              "en": "False"
+              "en": "False",
+              "nl": "Onwaar"
             }
           }
         ],
         "id": "stopped-streaming"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Is Streaming"
+        },
+        "id": "is-streaming"
       }
     ]
   },
   "drivers": [
     {
       "name": {
-        "en": "vMix Instance"
+        "en": "vMix Instance",
+        "nl": "vMix Instantie"
       },
       "class": "other",
       "capabilities": [],
@@ -254,11 +291,15 @@
       "settings": [
         {
           "id": "ip",
-          "hint": "IP address of vMix",
+          "hint": {
+            "en": "IP address of vMix device",
+            "nl": "IP addres van vMix apparaat"
+          },
           "type": "text",
           "value": "0.0.0.0",
           "label": {
-            "en": "IP address"
+            "en": "IP address",
+            "nl": "IP adres"
           }
         }
       ],

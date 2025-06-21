@@ -1,27 +1,26 @@
 {
-  "title": {
-    "en": "Input Playing"
-  },
-  "tokens": [
-    {
-      "type": "number",
-      "name": "input-number",
-      "title": {
-        "en": "Input Number"
-      },
-      "example": {
-        "en": "1"
-      }
+    "title": {
+        "en": "Input Playing",
+        "nl": "Input speelt af"
     },
-    {
-      "type": "number",
-      "name": "playing",
-      "title": {
-        "en": "Playing"
-      },
-      "example": {
-        "en": "0"
-      }
-    }
-  ]
+    "tokens": [
+        {
+            "type": "number",
+            "name": "input-number",
+            "title": {
+                "en": "Input Number",
+                "nl": "Input nummer"
+            },
+            "example": "1"
+        },
+        {
+            "type": "number",
+            "name": "playing",
+            "title": {
+                "en": "Playing",
+                "nl": "Speelt af"
+            },
+            "example": "0"
+        }
+    ]
 }

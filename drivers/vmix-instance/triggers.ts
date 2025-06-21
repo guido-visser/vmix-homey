@@ -58,7 +58,7 @@ const vMixTriggers = _.debounce(
                 const overlayNumber = activator.split("Overlay")[1];
                 homey.flow.getTriggerCard("overlay-changed").trigger({
                     "overlay-number": parseInt(overlayNumber),
-                    "overlay-active": parseInt(param2),
+                    "overlay-active": !!parseInt(param2),
                     "overlay-input": parseInt(param1),
                 });
                 break;

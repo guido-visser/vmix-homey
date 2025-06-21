@@ -1,57 +1,68 @@
 {
-  "title": {
-    "en": "Stopped Streaming"
-  },
-  "tokens": [
-    {
-      "type": "boolean",
-      "name": "channel1",
-      "title": {
-        "en": "Channel 1"
-      },
-      "example": {
-        "en": "True"
-      }
+    "title": {
+        "en": "Stopped Streaming",
+        "nl": "Streamen is Gestopt"
     },
-    {
-      "type": "boolean",
-      "name": "channel2",
-      "title": {
-        "en": "Channel 2"
-      },
-      "example": {
-        "en": "False"
-      }
-    },
-    {
-      "type": "boolean",
-      "name": "channel3",
-      "title": {
-        "en": "Channel 3"
-      },
-      "example": {
-        "en": "False"
-      }
-    },
-    {
-      "type": "boolean",
-      "name": "channel4",
-      "title": {
-        "en": "Channel 4"
-      },
-      "example": {
-        "en": "False"
-      }
-    },
-    {
-      "type": "boolean",
-      "name": "channel5",
-      "title": {
-        "en": "Channel 5"
-      },
-      "example": {
-        "en": "False"
-      }
-    }
-  ]
+    "tokens": [
+        {
+            "type": "boolean",
+            "name": "channel1",
+            "title": {
+                "en": "Channel 1",
+                "nl": "Kanaal 1"
+            },
+            "example": {
+                "en": "True",
+                "nl": "Waar"
+            }
+        },
+        {
+            "type": "boolean",
+            "name": "channel2",
+            "title": {
+                "en": "Channel 2",
+                "nl": "Kanaal 2"
+            },
+            "example": {
+                "en": "False",
+                "nl": "Onwaar"
+            }
+        },
+        {
+            "type": "boolean",
+            "name": "channel3",
+            "title": {
+                "en": "Channel 3",
+                "nl": "Kanaal 3"
+            },
+            "example": {
+                "en": "False",
+                "nl": "Onwaar"
+            }
+        },
+        {
+            "type": "boolean",
+            "name": "channel4",
+            "title": {
+                "en": "Channel 4",
+                "nl": "Kanaal 4"
+            },
+            "example": {
+                "en": "False",
+                "nl": "Onwaar"
+            }
+        },
+        {
+            "type": "boolean",
+            "name": "channel5",
+            "title": {
+                "en": "Channel 5",
+                "nl": "Kanaal 5"
+            },
+            "example": {
+                "en": "False",
+                "nl": "Onwaar"
+            }
+        }
+    ]
 }

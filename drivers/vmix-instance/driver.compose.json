@@ -1,34 +1,35 @@
 {
-  "name": {
-    "en": "vMix Instance"
-  },
-  "class": "other",
-  "capabilities": [],
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "lan"
-  ],
-  "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
-  },
-  "pair": [
-    {
-      "id": "vmix_pair"
-    }
-  ],
-  "settings": [
-    {
-      "id": "ip",
-      "hint": "IP address of vMix",
-      "type": "text",
-      "value": "0.0.0.0",
-      "label": {
-        "en": "IP address"
-      }
-    }
-  ]
+    "name": {
+        "en": "vMix Instance",
+        "nl": "vMix Instantie"
+    },
+    "class": "other",
+    "capabilities": [],
+    "platforms": ["local"],
+    "connectivity": ["lan"],
+    "images": {
+        "small": "{{driverAssetsPath}}/images/small.png",
+        "large": "{{driverAssetsPath}}/images/large.png",
+        "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    },
+    "pair": [
+        {
+            "id": "vmix_pair"
+        }
+    ],
+    "settings": [
+        {
+            "id": "ip",
+            "hint": {
+                "en": "IP address of vMix device",
+                "nl": "IP addres van vMix apparaat"
+            },
+            "type": "text",
+            "value": "0.0.0.0",
+            "label": {
+                "en": "IP address",
+                "nl": "IP adres"
+            }
+        }
+    ]
 }
