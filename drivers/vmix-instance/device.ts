@@ -20,7 +20,13 @@ module.exports = class VMixInstance extends Homey.Device {
         this.homey.flow
             .getConditionCard("is-streaming")
             .registerRunListener(
-                async () => await vMixConditions(this, this._ip, "is-streaming")
+                async () => await vMixConditions(this._ip, "is-streaming")
+            );
+
+        this.homey.flow
+            .getConditionCard("is-recording")
+            .registerRunListener(
+                async () => await vMixConditions(this._ip, "is-recording")
             );
 
         try {

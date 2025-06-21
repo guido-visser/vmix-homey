@@ -348,6 +348,13 @@
     "conditions": [
       {
         "title": {
+          "en": "Is Recording",
+          "nl": "Aan het opnemen"
+        },
+        "id": "is-recording"
+      },
+      {
+        "title": {
           "en": "Is Streaming",
           "nl": "Aan het streamen"
         },

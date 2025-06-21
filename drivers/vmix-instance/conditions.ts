@@ -1,11 +1,12 @@
 import { vMixAPI } from "../../utils";
-import Homey from "homey";
 
-const vMixConditions = async (homey: Homey.Device, ip: string, id: string) => {
+const vMixConditions = async (ip: string, id: string) => {
+    const vmix = await vMixAPI(ip);
     switch (id) {
         case "is-streaming":
-            const vmix = await vMixAPI(ip);
             return vmix.streaming !== "False";
+        case "is-recording":
+            return vmix.recording["_@ttribute"] !== "False";
     }
 };
 
