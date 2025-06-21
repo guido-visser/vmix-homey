@@ -9,39 +9,11 @@ const vMixTriggers = _.debounce(
         homey.log(activator, param1, param2);
         switch (activator) {
             case "Streaming":
-                let channel1 = false;
-                let channel2 = false;
-                let channel3 = false;
-                let channel4 = false;
-                let channel5 = false;
+                await recordingOrStreaming("Streaming", homey, ip, param1);
+                break;
 
-                const { streaming } = await vMixAPI(ip);
-                if (streaming !== "False") {
-                    channel1 = !!streaming.channel1;
-                    channel2 = !!streaming.channel2;
-                    channel3 = !!streaming.channel3;
-                    channel4 = !!streaming.channel4;
-                    channel5 = !!streaming.channel5;
-                }
-
-                const tokens = {
-                    channel1,
-                    channel2,
-                    channel3,
-                    channel4,
-                    channel5,
-                };
-
-                if (param1 === "0") {
-                    homey.flow
-                        .getTriggerCard("stopped-streaming")
-                        .trigger(tokens);
-                }
-                if (param1 === "1") {
-                    homey.flow
-                        .getTriggerCard("started-streaming")
-                        .trigger(tokens);
-                }
+            case "Recording":
+                await recordingOrStreaming("Recording", homey, ip, param1);
                 break;
 
             case "InputPreview":
@@ -73,5 +45,64 @@ const vMixTriggers = _.debounce(
     },
     150
 );
+
+const recordingOrStreaming = async (
+    action: "Recording" | "Streaming",
+    homey: Homey,
+    ip: string,
+    param1: string
+) => {
+    let tokens: any = {};
+    let option1: boolean | string = false;
+    let option2: boolean | string = false;
+    let option3: boolean | string = false;
+    let option4: boolean | string = false;
+    let option5: boolean | string = false;
+
+    if (action === "Streaming") {
+        const { streaming } = await vMixAPI(ip);
+        if (streaming !== "False") {
+            option1 = !!streaming.channel1;
+            option2 = !!streaming.channel2;
+            option3 = !!streaming.channel3;
+            option4 = !!streaming.channel4;
+            option5 = !!streaming.channel5;
+        }
+
+        tokens = {
+            option1,
+            option2,
+            option3,
+            option4,
+            option5,
+        };
+    }
+
+    if (action === "Recording") {
+        const { recording } = await vMixAPI(ip);
+
+        option1 = recording?.filename1 || "";
+        option2 = recording?.filename2 || "";
+        option3 = recording?.filename3 || "";
+        option4 = recording?.filename4 || "";
+
+        tokens = { option1, option2, option3, option4 };
+    }
+
+    if (param1 === "0") {
+        homey.flow
+            .getTriggerCard(
+                `stopped-${action === "Streaming" ? "streaming" : "recording"}`
+            )
+            .trigger(tokens);
+    }
+    if (param1 === "1") {
+        homey.flow
+            .getTriggerCard(
+                `started-${action === "Streaming" ? "streaming" : "recording"}`
+            )
+            .trigger(tokens);
+    }
+};
 
 export default vMixTriggers;

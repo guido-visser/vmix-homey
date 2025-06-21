@@ -118,13 +118,58 @@
       },
       {
         "title": {
+          "en": "Started Recording",
+          "nl": "Opname is Gestart"
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "option1",
+            "title": {
+              "en": "Filename 1",
+              "nl": "Bestandsnaam 1"
+            },
+            "example": "M:\\Capture1.mp4"
+          },
+          {
+            "type": "string",
+            "name": "option2",
+            "title": {
+              "en": "Filename 2",
+              "nl": "Bestandsnaam 2"
+            },
+            "example": "M:\\Capture2.mp4"
+          },
+          {
+            "type": "string",
+            "name": "option3",
+            "title": {
+              "en": "Filename 3",
+              "nl": "Bestandsnaam 3"
+            },
+            "example": "M:\\Capture3.mp4"
+          },
+          {
+            "type": "string",
+            "name": "option4",
+            "title": {
+              "en": "Filename 4",
+              "nl": "Bestandsnaam 4"
+            },
+            "example": "M:\\Capture4.mp4"
+          }
+        ],
+        "id": "started-recording"
+      },
+      {
+        "title": {
           "en": "Started Streaming",
           "nl": "Streamen is Gestart"
         },
         "tokens": [
           {
             "type": "boolean",
-            "name": "channel1",
+            "name": "option1",
             "title": {
               "en": "Channel 1",
               "nl": "Kanaal 1"
@@ -136,7 +181,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel2",
+            "name": "option2",
             "title": {
               "en": "Channel 2",
               "nl": "Kanaal 2"
@@ -148,7 +193,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel3",
+            "name": "option3",
             "title": {
               "en": "Channel 3",
               "nl": "Kanaal 2"
@@ -160,7 +205,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel4",
+            "name": "option4",
             "title": {
               "en": "Channel 4",
               "nl": "Kanaal 4"
@@ -172,7 +217,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel5",
+            "name": "option5",
             "title": {
               "en": "Channel 5",
               "nl": "Kanaal 5"
@@ -187,13 +232,58 @@
       },
       {
         "title": {
+          "en": "Stopped Recording",
+          "nl": "Opname is Gestopt"
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "option1",
+            "title": {
+              "en": "Filename 1",
+              "nl": "Bestandsnaam 1"
+            },
+            "example": "M:\\Capture1.mp4"
+          },
+          {
+            "type": "string",
+            "name": "option2",
+            "title": {
+              "en": "Filename 2",
+              "nl": "Bestandsnaam 2"
+            },
+            "example": "M:\\Capture2.mp4"
+          },
+          {
+            "type": "string",
+            "name": "option3",
+            "title": {
+              "en": "Filename 3",
+              "nl": "Bestandsnaam 3"
+            },
+            "example": "M:\\Capture3.mp4"
+          },
+          {
+            "type": "string",
+            "name": "option4",
+            "title": {
+              "en": "Filename 4",
+              "nl": "Bestandsnaam 4"
+            },
+            "example": "M:\\Capture4.mp4"
+          }
+        ],
+        "id": "stopped-recording"
+      },
+      {
+        "title": {
           "en": "Stopped Streaming",
           "nl": "Streamen is Gestopt"
         },
         "tokens": [
           {
             "type": "boolean",
-            "name": "channel1",
+            "name": "option1",
             "title": {
               "en": "Channel 1",
               "nl": "Kanaal 1"
@@ -205,7 +295,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel2",
+            "name": "option2",
             "title": {
               "en": "Channel 2",
               "nl": "Kanaal 2"
@@ -217,7 +307,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel3",
+            "name": "option3",
             "title": {
               "en": "Channel 3",
               "nl": "Kanaal 3"
@@ -229,7 +319,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel4",
+            "name": "option4",
             "title": {
               "en": "Channel 4",
               "nl": "Kanaal 4"
@@ -241,7 +331,7 @@
           },
           {
             "type": "boolean",
-            "name": "channel5",
+            "name": "option5",
             "title": {
               "en": "Channel 5",
               "nl": "Kanaal 5"
@@ -258,7 +348,8 @@
     "conditions": [
       {
         "title": {
-          "en": "Is Streaming"
+          "en": "Is Streaming",
+          "nl": "Aan het streamen"
         },
         "id": "is-streaming"
       }

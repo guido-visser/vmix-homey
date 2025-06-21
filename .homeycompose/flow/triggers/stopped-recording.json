@@ -1,0 +1,44 @@
+{
+    "title": {
+        "en": "Stopped Recording",
+        "nl": "Opname is Gestopt"
+    },
+    "tokens": [
+        {
+            "type": "string",
+            "name": "option1",
+            "title": {
+                "en": "Filename 1",
+                "nl": "Bestandsnaam 1"
+            },
+            "example": "M:\\Capture1.mp4"
+        },
+        {
+            "type": "string",
+            "name": "option2",
+            "title": {
+                "en": "Filename 2",
+                "nl": "Bestandsnaam 2"
+            },
+            "example": "M:\\Capture2.mp4"
+        },
+        {
+            "type": "string",
+            "name": "option3",
+            "title": {
+                "en": "Filename 3",
+                "nl": "Bestandsnaam 3"
+            },
+            "example": "M:\\Capture3.mp4"
+        },
+        {
+            "type": "string",
+            "name": "option4",
+            "title": {
+                "en": "Filename 4",
+                "nl": "Bestandsnaam 4"
+            },
+            "example": "M:\\Capture4.mp4"
+        }
+    ]
+}
